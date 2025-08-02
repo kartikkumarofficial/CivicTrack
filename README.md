@@ -122,8 +122,3 @@ Feel free to fork, contribute, or just say hi! 🙌
 
 ```
 
----
-
-✅ **Copy everything from above and paste directly into your `README.md` in Android Studio.**  
-Let me know if you want live links, license section, or GitHub badges added!
-```
