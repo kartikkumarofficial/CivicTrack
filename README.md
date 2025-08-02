@@ -1,46 +1,36 @@
-CivicTrack - Community-Powered Issue Reporting
+<div align="center">
+<h1 align="center">📍 CivicTrack</h1>
 <p align="center">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Flutter-3.x-blue%3Flogo%3Dflutter" alt="Flutter">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Supabase-Backend-green%3Flogo%3Dsupabase" alt="Supabase">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Cloudinary-Media-blueviolet%3Flogo%3Dcloudinary" alt="Cloudinary">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
+<strong>Community-Powered Civic Issue Reporting</strong><br>
+Spot, report, and track local issues to help build a better community.
+</p>
+</div>
+
+<p align="center">
+<img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Supabase-3FCF8E%3Fstyle%3Dfor-the-badge%26logo%3Dsupabase%26logoColor%3Dwhite" alt="Supabase">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Cloudinary-3448C5%3Fstyle%3Dfor-the-badge%26logo%3Dcloudinary%26logoColor%3Dwhite" alt="Cloudinary">
+<img src="https://www.google.com/search?q=https://img.shields.io/github/license/YOUR_USERNAME/YOUR_REPO%3Fstyle%3Dfor-the-badge" alt="License">
 </p>
 
 An open-source Flutter application that empowers citizens to report, track, and visualize local civic issues. Users can submit problems like potholes, broken streetlights, or uncollected garbage with photos and precise locations, and monitor their resolution status within the community.
 
-📸 Screenshots
-Home Screen (List View)
+✨ Key Features
+✅ Real-time Issue Feed: View a live, scrollable list of all reported issues.
 
-Report New Issue
+🗺️ Interactive Map View: Visualize the geographic distribution of all reported issues on a full-screen map with custom markers.
 
-Issues Map View
+📝 Detailed Issue Reporting: Submit new issues with a title, description, category, and photo.
 
-Issue Details
+📍 Precise Location Pinpointing: Automatically fetch the user's current location or use an interactive map with search to select the exact spot of an issue.
 
+☁️ Cloud-Based Image Uploads: Images are handled by Cloudinary for efficient storage and delivery.
 
+👤 User-Specific Filtering: Filter the issue feed to show only the problems you have reported.
 
+🔍 Detailed View: Tap any issue from the list or map to see its full details, including the image, description, and reporter information.
 
-
-
-
-
-
-✨ Features
-Real-time Issue Feed: View a live, scrollable list of all reported issues.
-
-Interactive Map View: Visualize the geographic distribution of all reported issues on a full-screen map with custom markers.
-
-Detailed Issue Reporting: Submit new issues with a title, description, category, and photo.
-
-Precise Location Pinpointing: Automatically fetch the user's current location or use an interactive map with search to select the exact spot of an issue.
-
-Cloud-Based Image Uploads: Images are handled by Cloudinary for efficient storage and delivery.
-
-User-Specific Filtering: Filter the issue feed to show only the problems you have reported.
-
-Detailed View: Tap any issue from the list or map to see its full details, including the image, description, and reporter information.
-
-Light & Dark Mode: The UI seamlessly adapts to the system's theme.
+🌗 Light & Dark Mode: The UI seamlessly adapts to the system's theme.
 
 🛠️ Tech Stack
 Frontend: Flutter
@@ -55,24 +45,15 @@ Image Hosting: Cloudinary
 
 Location Services: geolocator, geocoding
 
-📁 Folder Structure
-The project maintains a clean and scalable folder structure:
+<br>
 
-lib
-├── app
-│   ├── controllers   # GetX controllers for state management (e.g., theme, account)
-│   ├── models        # Data models (e.g., issue_model.dart)
-│   └── services      # External services (e.g., cloudinary_service.dart)
-├── presentation
-│   ├── screens       # Main screens of the app (e.g., home_screen.dart, report_issue_screen.dart)
-│   └── widgets       # Reusable widgets (e.g., issue_card.dart)
-└── main.dart         # App entry point and initialization
+<details>
+<summary>🚀 Getting Started</summary>
 
-🚀 Getting Started
 Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
 Prerequisites
-Flutter SDK installed (version 3.x or higher)
+Flutter SDK (version 3.x or higher)
 
 A code editor like VS Code or Android Studio
 
@@ -94,7 +75,7 @@ flutter pub get
 
 Go to your Supabase Dashboard and create a new project.
 
-In your project, go to the SQL Editor and run the query from the database.sql file (or the queries provided in the development history) to create the issues table.
+In your project, go to the SQL Editor and run the query from database.sql (or the queries provided in the development history) to create the issues table.
 
 Go to Project Settings > API. Copy your Project URL and anon public Key.
 
@@ -131,6 +112,52 @@ Follow the instructions in the geolocator and flutter_map package documentation 
 6. Run the App
 
 flutter run
+
+</details>
+
+<details>
+<summary>📁 Folder Structure</summary>
+
+The project maintains a clean and scalable folder structure:
+
+lib
+├── app
+│   ├── controllers   # GetX controllers for state management
+│   ├── models        # Data models (e.g., issue_model.dart)
+│   └── services      # External services (e.g., cloudinary_service.dart)
+├── presentation
+│   ├── screens       # Main screens of the app
+│   └── widgets       # Reusable UI components
+└── main.dart         # App entry point and initialization
+
+</details>
+
+📸 App Preview
+Home Screen
+
+Report Issue
+
+[Add Home Screen Screenshot Here]
+
+[Add Report Issue Screen Screenshot Here]
+
+Issues Map
+
+Issue Details
+
+[Add Map Screen Screenshot Here]
+
+[Add Details Screen Screenshot Here]
+
+How to add screenshots:
+
+Run the app and take screenshots of the different screens.
+
+In your GitHub repository, create a new folder named .github/assets.
+
+Upload your screenshot images to this new folder.
+
+Replace the _[Add ... Screenshot Here]_ placeholders above with the Markdown for your images, like this: ![Screen Name](.github/assets/your-image-name.png)
 
 🤝 Contributing
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
