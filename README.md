@@ -1,3 +1,4 @@
+
 # 🏙️ CivicTrack – Report, Resolve, Revive
 
 **CivicTrack** is a community-driven platform that empowers citizens to report local civic issues like potholes, water leaks, garbage overflow, and more — all within a 3–5 km radius. With real-time updates, map-based tracking, and admin moderation, CivicTrack bridges the gap between the public and the authorities for a cleaner, safer neighborhood.
@@ -32,14 +33,12 @@
 ## 📲 Quick Start
 
 1. **Clone the repository**
-
     ```bash
     git clone https://github.com/your-username/civictrack.git
     cd civictrack
     ```
 
 2. **Install dependencies**
-
     ```bash
     flutter pub get
     ```
@@ -61,7 +60,6 @@
     ```
 
 4. **Run the app**
-
     ```bash
     flutter run
     ```
@@ -83,35 +81,49 @@ lib/
 │   ├── screens/        # UI pages like Home, Report Issue, Admin Panel
 │   └── widgets/        # Reusable UI components (e.g., issue cards, map pins)
 └── main.dart           # Entry point
-🌍 Future Enhancements
-🌐 Multilingual Support
-For diverse communities across regions.
+````
 
-🧠 AI-Powered Issue Categorization
-Smart detection of issue types from image and description.
+---
 
-🎟️ Issue Upvoting
-Let citizens vote on issues that need the most attention.
+## 🌍 Future Enhancements
 
-📬 Push Notifications
-For real-time status updates on submitted reports.
+* 🌐 **Multilingual Support**
+  For diverse communities across regions.
 
-🧑‍⚖️ Advanced Admin Tools
-Tagging priority issues, assigning responders, exporting reports.
+* 🧠 **AI-Powered Issue Categorization**
+  Smart detection of issue types from image and description.
 
-🛠️ Built With
-Flutter 💙 – Fast, beautiful, and multi-platform UI toolkit
+* 🎟️ **Issue Upvoting**
+  Let citizens vote on issues that need the most attention.
 
-Supabase 🔐 – Authentication, database, and storage
+* 📬 **Push Notifications**
+  For real-time status updates on submitted reports.
 
-GetX ⚡ – Lightweight and reactive state management
+* 🧑‍⚖️ **Advanced Admin Tools**
+  Tagging priority issues, assigning responders, exporting reports.
 
-Google Maps / flutter_map 🗺️ – For visualizing civic reports on the map
+---
 
-Cloudinary ☁️ – To upload and host report images
+## 🛠️ Built With
 
-fl_chart 📊 – For beautiful analytics graphs and charts
+* **Flutter** 💙 – Fast, beautiful, and multi-platform UI toolkit
+* **Supabase** 🔐 – Authentication, database, and storage
+* **GetX** ⚡ – Lightweight and reactive state management
+* **Google Maps / flutter\_map** 🗺️ – For visualizing civic reports on the map
+* **Cloudinary** ☁️ – To upload and host report images
+* **fl\_chart** 📊 – For beautiful analytics graphs and charts
 
-👨‍💻 Made by Kartik and Hemish
+---
+
+## 👨‍💻 Made by Kartik and Hemish
+
 We're on a mission to improve our cities — one report at a time.
 Feel free to fork, contribute, or just say hi! 🙌
+
+```
+
+---
+
+✅ **Copy everything from above and paste directly into your `README.md` in Android Studio.**  
+Let me know if you want live links, license section, or GitHub badges added!
+```
