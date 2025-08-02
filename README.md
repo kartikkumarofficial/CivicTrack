@@ -120,5 +120,4 @@ lib/
 We're on a mission to improve our cities — one report at a time.
 Feel free to fork, contribute, or just say hi! 🙌
 
-```
 
