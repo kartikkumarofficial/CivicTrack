@@ -82,6 +82,79 @@ lib/
 │   └── widgets/        # Reusable UI components (e.g., issue cards, map pins)
 └── main.dart           # Entry point
 ````
+## 🧾 Database Schema (Supabase SQL)
+
+Below is the schema used for the **CivicTrack** application — designed with normalization, clarity, and performance in mind.
+
+---
+
+### 🧍‍♂️ Table: `users`
+
+Stores basic profile information about users (caregivers, citizens, admins, etc.)
+
+| Column        | Type        | Description                          |
+|---------------|-------------|--------------------------------------|
+| `id`          | `uuid`      | Primary key (Supabase Auth UID)      |
+| `username`    | `text`      | Display name of the user             |
+| `profile_image` | `text`    | URL of the user's profile image      |
+| `created_at`  | `timestamptz` | Timestamp when account was created  |
+| `email`       | `text`      | User email                           |
+| `bio`         | `text`      | Short bio/description (optional)     |
+| `last_seen`   | `timestamptz` | Last active timestamp                |
+
+---
+
+### 📍 Table: `issues`
+
+Stores all civic issue reports submitted by users.
+
+| Column         | Type        | Description                                      |
+|----------------|-------------|--------------------------------------------------|
+| `id`           | `int8`      | Auto-incrementing primary key                   |
+| `created_at`   | `timestamptz` | Time the issue was reported                   |
+| `title`        | `text`      | Short title of the issue                        |
+| `description`  | `text`      | Detailed description of the problem             |
+| `category`     | `text`      | One of: Roads, Lighting, Water, Cleanliness, etc. |
+| `image_url`    | `text`      | Cloudinary image URL                            |
+| `latitude`     | `float8`    | Latitude coordinate                             |
+| `longitude`    | `float8`    | Longitude coordinate                            |
+| `is_anonymous` | `boolean`   | Whether the report is anonymous                 |
+| `status`       | `text`      | One of: Reported, In Progress, Resolved         |
+| `user_id`      | `uuid`      | Foreign key → `users.id`                        |
+| `user_name`    | `text`      | Copied username (for quick access/display)      |
+
+---
+
+### 🛠️ SQL to Create Tables
+
+```sql
+-- Table: users
+create table if not exists public.users (
+  id uuid primary key,
+  username text,
+  profile_image text,
+  created_at timestamptz default now(),
+  email text,
+  bio text,
+  last_seen timestamptz
+);
+
+-- Table: issues
+create table if not exists public.issues (
+  id bigint generated always as identity primary key,
+  created_at timestamptz default now(),
+  title text not null,
+  description text,
+  category text,
+  image_url text,
+  latitude float8,
+  longitude float8,
+  is_anonymous boolean default false,
+  status text default 'Reported',
+  user_id uuid references public.users(id) on delete cascade,
+  user_name text
+);
+
 
 ---
 
