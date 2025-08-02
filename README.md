@@ -188,7 +188,6 @@ create table if not exists public.issues (
 
 ---
 
-## Screenshots
 
 ## 📸 Screenshots
 
