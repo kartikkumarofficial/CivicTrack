@@ -153,6 +153,7 @@ create table if not exists public.issues (
   user_id uuid references public.users(id) on delete cascade,
   user_name text
 );
+```
 
 
 ---
@@ -189,7 +190,6 @@ create table if not exists public.issues (
 
 ## 👨‍💻 Made by Kartik and Hemish
 
-We're on a mission to improve our cities — one report at a time.
-Feel free to fork, contribute, or just say hi! 🙌
+Feel free to fork or contribute.
 
 
