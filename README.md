@@ -1,176 +1,97 @@
-<div align="center">
-<h1 align="center">📍 CivicTrack</h1>
-<p align="center">
-<strong>Community-Powered Civic Issue Reporting</strong><br>
-Spot, report, and track local issues to help build a better community.
-</p>
-</div>
+🏙️ CivicTrack – Report, Resolve, Revive
+CivicTrack is a community-driven platform that empowers citizens to report local civic issues like potholes, water leaks, garbage overflow, and more — all within a 3–5 km radius. With real-time updates, map-based tracking, and admin moderation, CivicTrack bridges the gap between the public and the authorities for a cleaner, safer neighborhood.
 
-<p align="center">
-<img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Supabase-3FCF8E%3Fstyle%3Dfor-the-badge%26logo%3Dsupabase%26logoColor%3Dwhite" alt="Supabase">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Cloudinary-3448C5%3Fstyle%3Dfor-the-badge%26logo%3Dcloudinary%26logoColor%3Dwhite" alt="Cloudinary">
-<img src="https://www.google.com/search?q=https://img.shields.io/github/license/YOUR_USERNAME/YOUR_REPO%3Fstyle%3Dfor-the-badge" alt="License">
-</p>
+✨ Core Features
+🧾 Quick Issue Reporting: Users can report civic problems with a title, description, photo uploads (up to 5), and category selection.
 
-An open-source Flutter application that empowers citizens to report, track, and visualize local civic issues. Users can submit problems like potholes, broken streetlights, or uncollected garbage with photos and precise locations, and monitor their resolution status within the community.
+📍 Radius-Based Visibility: Only reports within a 3–5 km GPS or manually set radius are visible, keeping things hyper-local.
 
-✨ Key Features
-✅ Real-time Issue Feed: View a live, scrollable list of all reported issues.
+👤 Anonymous or Verified Reporting: Users can choose to report anonymously or using their verified profile.
 
-🗺️ Interactive Map View: Visualize the geographic distribution of all reported issues on a full-screen map with custom markers.
+🔔 Status Tracking: View live status updates like Reported, In Progress, and Resolved with timestamps and change logs.
 
-📝 Detailed Issue Reporting: Submit new issues with a title, description, category, and photo.
+🗺️ Interactive Map View: All reports appear as pins on a map with filtering by distance, category, and status.
 
-📍 Precise Location Pinpointing: Automatically fetch the user's current location or use an interactive map with search to select the exact spot of an issue.
+🧼 Spam Reporting & Moderation: Users can flag spam/irrelevant reports. Reports flagged multiple times are auto-hidden pending admin review.
 
-☁️ Cloud-Based Image Uploads: Images are handled by Cloudinary for efficient storage and delivery.
+📊 Admin Dashboard & Analytics: Admins can view insights like most reported categories, total reports, and take moderation actions.
 
-👤 User-Specific Filtering: Filter the issue feed to show only the problems you have reported.
+📲 Quick Start
+Clone the repository
 
-🔍 Detailed View: Tap any issue from the list or map to see its full details, including the image, description, and reporter information.
+bash
+Copy
+Edit
+git clone https://github.com/your-username/civictrack.git
+cd civictrack
+Install dependencies
 
-🌗 Light & Dark Mode: The UI seamlessly adapts to the system's theme.
-
-🛠️ Tech Stack
-Frontend: Flutter
-
-Backend-as-a-Service (BaaS): Supabase (Database & Auth)
-
-State Management: GetX
-
-Mapping: OpenStreetMap with flutter_map
-
-Image Hosting: Cloudinary
-
-Location Services: geolocator, geocoding
-
-<br>
-
-<details>
-<summary>🚀 Getting Started</summary>
-
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
-
-Prerequisites
-Flutter SDK (version 3.x or higher)
-
-A code editor like VS Code or Android Studio
-
-A Supabase account (free tier)
-
-A Cloudinary account (free tier)
-
-Installation & Setup
-1. Clone the Repository
-
-git clone [https://github.com/YOUR_USERNAME/YOUR_REPO.git](https://github.com/YOUR_USERNAME/YOUR_REPO.git)
-cd YOUR_REPO
-
-2. Install Dependencies
-
+bash
+Copy
+Edit
 flutter pub get
+Set up Supabase
+Open the file lib/main.dart and replace the placeholder values with your actual Supabase project credentials:
 
-3. Set up Supabase
-
-Go to your Supabase Dashboard and create a new project.
-
-In your project, go to the SQL Editor and run the query from database.sql (or the queries provided in the development history) to create the issues table.
-
-Go to Project Settings > API. Copy your Project URL and anon public Key.
-
-In lib/main.dart, replace the placeholder values with your Supabase credentials:
+dart
+Copy
+Edit
+Future<void> main() async {
+WidgetsFlutterBinding.ensureInitialized();
 
 await Supabase.initialize(
-url: 'YOUR_SUPABASE_URL',
-anonKey: 'YOUR_SUPABASE_ANON_KEY',
+url: 'YOUR_SUPABASE_URL',         // <-- PASTE YOUR URL HERE
+anonKey: 'YOUR_SUPABASE_ANON_KEY' // <-- PASTE YOUR KEY HERE
 );
 
-4. Set up Cloudinary
-
-Go to your Cloudinary Dashboard.
-
-Find your Cloud Name on the dashboard.
-
-Go to Settings (gear icon) > Upload.
-
-Scroll down to Upload presets, click "Add upload preset".
-
-Change the "Signing Mode" from "Signed" to "Unsigned" and save. Copy the Upload preset name.
-
-In lib/app/services/cloudinary_service.dart, replace the placeholder values:
-
-class Secrets {
-static const cloudName = 'YOUR_CLOUD_NAME';
-static const uploadPreset = 'YOUR_UPLOAD_PRESET_NAME';
+runApp(const MyApp());
 }
+Run the app
 
-5. Configure Location Permissions
-
-Follow the instructions in the geolocator and flutter_map package documentation to set up the necessary permissions for Android and iOS. This involves editing AndroidManifest.xml and Info.plist.
-
-6. Run the App
-
+bash
+Copy
+Edit
 flutter run
+📂 Project Structure
+bash
+Copy
+Edit
+lib/
+├── app/
+│   ├── bindings/       # GetX Bindings for dependency injection
+│   ├── controllers/    # GetX Controllers for managing state & logic
+│   ├── data/           # Data providers and mock APIs
+│   ├── models/         # Model classes (Issue, User, etc.)
+│   ├── services/       # Business logic (API calls, Supabase, Cloudinary)
+│   └── utils/          # Constants, helpers, extensions
+├── presentation/
+│   ├── screens/        # UI pages like Home, Report Issue, Admin Panel
+│   └── widgets/        # Reusable UI components (e.g., issue cards, map pins)
+└── main.dart           # Entry point
+🌍 Future Enhancements
+🌐 Multilingual Support: For diverse communities across regions.
 
-</details>
+🧭 AI-Powered Issue Categorization: Smart detection of issue types from image and description.
 
-<details>
-<summary>📁 Folder Structure</summary>
+🎟️ Issue Upvoting: Let citizens vote on issues that need the most attention.
 
-The project maintains a clean and scalable folder structure:
+📬 Push Notifications: For real-time status updates on submitted reports.
 
-lib
-├── app
-│   ├── controllers   # GetX controllers for state management
-│   ├── models        # Data models (e.g., issue_model.dart)
-│   └── services      # External services (e.g., cloudinary_service.dart)
-├── presentation
-│   ├── screens       # Main screens of the app
-│   └── widgets       # Reusable UI components
-└── main.dart         # App entry point and initialization
+🧑‍⚖️ Advanced Admin Tools: Tagging priority issues, assigning responders, exporting reports.
 
-</details>
+🛠️ Built With
+Flutter 💙 – Fast, beautiful, and multi-platform UI toolkit
 
-📸 App Preview
-Home Screen
+Supabase 🔐 – Authentication, database, and storage
 
-Report Issue
+GetX ⚡ – Lightweight and reactive state management
 
-[Add Home Screen Screenshot Here]
+Google Maps / flutter_map 🗺️ – For visualizing civic reports on the map
 
-[Add Report Issue Screen Screenshot Here]
+Cloudinary ☁️ – To upload and host report images
 
-Issues Map
+fl_chart 📊 – For beautiful analytics graphs and charts
 
-Issue Details
-
-[Add Map Screen Screenshot Here]
-
-[Add Details Screen Screenshot Here]
-
-How to add screenshots:
-
-Run the app and take screenshots of the different screens.
-
-In your GitHub repository, create a new folder named .github/assets.
-
-Upload your screenshot images to this new folder.
-
-Replace the _[Add ... Screenshot Here]_ placeholders above with the Markdown for your images, like this: ![Screen Name](.github/assets/your-image-name.png)
-
-🤝 Contributing
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
-
-Fork the Project
-
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
-
-Commit your Changes (git commit -m 'Add some AmazingFeature')
-
-Push to the Branch (git push origin feature/AmazingFeature)
-
-Open a Pull Request
-
-📄 License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+👨‍💻 Made by Kartik and Hemish
+We're on a mission to improve our cities — one report at a time.
+Feel free to fork, contribute, or just say hi! 🙌
