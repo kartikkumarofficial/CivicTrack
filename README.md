@@ -82,11 +82,10 @@ lib/
 │   └── widgets/        # Reusable UI components (e.g., issue cards, map pins)
 └── main.dart           # Entry point
 ````
+---
+
 ## 🧾 Database Schema (Supabase SQL)
 
-Below is the schema used for the **CivicTrack** application — designed with normalization, clarity, and performance in mind.
-
----
 
 ### 🧍‍♂️ Table: `users`
 
